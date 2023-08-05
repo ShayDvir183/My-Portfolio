@@ -1,0 +1,140 @@
+.formWrap {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto auto;
+  row-gap: 1rem;
+}
+.contactWrap {
+  border: 1px solid black;
+  border-radius: 30px;
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
+  background-color: #f1f1f1;
+}
+.leftWrap {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 2rem;
+  row-gap: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.rightWrap {
+  width: 50%;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  align-items: stretch;
+}
+.textInput {
+  height: 3rem;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  border: none;
+}
+.textAreaInput {
+  height: 10rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+}
+input,
+textarea:focus {
+  outline: none;
+}
+.btn {
+  padding: 10px 20px;
+  background-color: aquamarine;
+  border: none;
+  border-radius: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.call {
+  width: 100px !important;
+  height: 50px;
+  display: block;
+  margin: auto auto;
+  align-items: center;
+}
+a {
+  border: none;
+  text-decoration: none;
+  font-weight: bold;
+}
+.call:hover {
+  animation: shake 0.8s infinite;
+}
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  animation: animatetop 0.3s;
+}
+.modalContent {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}

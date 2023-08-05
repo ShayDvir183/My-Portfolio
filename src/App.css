@@ -1,7 +1,16 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
 }
-
+body {
+  background-color: #cececf;
+  color: #0072b5;
+  background-image: url("./assets/images/back.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

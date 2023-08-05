@@ -1,0 +1,22 @@
+.link {
+  color: black;
+  height: 20px !important;
+}
+.link a {
+  width: 24px;
+  min-width: 24px;
+}
+.container {
+  width: auto;
+  border-radius: 5px;
+  border-right: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  height: 75px;
+  margin-right: 100px;
+  float: left;
+  left: 10px;
+  top: 100px;
+  position: fixed;
+}
