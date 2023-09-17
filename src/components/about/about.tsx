@@ -3,6 +3,17 @@ import styles from "./about.module.css";
 import Cv from "../../assets/other/ShayCv.pdf";
 export default function About() {
   const [btnText, setBtnText] = useState("Download My Cv");
+  const aboutText = `Hello! I'm Shay Dvir, a junior Full Stack Developer. I have a strong
+  enthusiasm for new technologies and innovations, and I'm open to
+  exciting challenges in the field. As a junior developer, I bring a
+  fresh perspective and a strong motivation to learn and grow. I have a
+  solid foundation in both frontend and backend development and I'm
+  eager to further develop my skills. I'm seeking a full-time position
+  as a junior Full Stack Developer where I can contribute to projects
+  while gaining valuable experience and mentorship. If you're looking
+  for a dedicated and eager junior developer to join your team, I would
+  love to discuss how I can contribute to your organization's success.
+  Let's connect and explore the possibilities together!`;
   const learenIcon = selfLearnerIcon();
   const loyaalIcon = loyalIcon();
   const teamPlayerIcon = getTeamPlayerIcon();
@@ -13,9 +24,9 @@ export default function About() {
     }, 1500);
   }
   return (
-    <div className={styles.container}>
-      <h1>About Me</h1>
-      <div className={styles.skillsContainer}>
+    <div className={`${styles.container}`} id="about">
+      <h1 className={styles.title}>About Me</h1>
+      <div className={`${styles.skillsContainer} mt-5`}>
         <span className={styles.skillBox}>
           {learenIcon}
           Self Learner
@@ -29,32 +40,20 @@ export default function About() {
           Team Player
         </span>
       </div>
-      <div className={styles.wrap}>
-        <p className={styles.text}>
-          Hello! I'm Shay Dvir, a junior Full Stack Developer. I have a strong
-          enthusiasm for new technologies and innovations, and I'm open to
-          exciting challenges in the field. As a junior developer, I bring a
-          fresh perspective and a strong motivation to learn and grow. I have a
-          solid foundation in both frontend and backend development and I'm
-          eager to further develop my skills. I'm seeking a full-time position
-          as a junior Full Stack Developer where I can contribute to projects
-          while gaining valuable experience and mentorship. If you're looking
-          for a dedicated and eager junior developer to join your team, I would
-          love to discuss how I can contribute to your organization's success.
-          Let's connect and explore the possibilities together!
-        </p>
-        <a
-          style={{ width: "25%", height: "100%" }}
-          href={Cv}
-          download={"Shay_Dvir_Cv"}
-        >
-          <button
+      <div className={`${styles.wrap} col-12  mt-5 `}>
+        <div className={`${styles.text} col-9 `}>
+          <p>{aboutText}</p>
+        </div>
+        <div className={`${styles.btnWrap} col-2 position-relative`}>
+          <a
+            href={Cv}
+            className={`${styles.btn} ${styles.btn_style} position-absolute  top-0 start-50 translate-middle-x`}
+            download={"Shay_Dvir_Cv"}
             onClick={cvClickHandler}
-            className={`${styles.btn} ${styles.btn_style}`}
           >
-            {btnText} <div className={styles.ss}></div>
-          </button>
-        </a>
+            {btnText}
+          </a>
+        </div>
       </div>
     </div>
   );

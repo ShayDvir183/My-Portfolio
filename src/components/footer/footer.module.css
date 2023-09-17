@@ -1,0 +1,16 @@
+.box {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-top: 0;
+  background-color: #4d4855;
+  background-image: linear-gradient(147deg, #4d4855 0%, #000000 74%);
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  align-items: center;
+  color: #fff;
+}

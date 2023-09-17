@@ -8,7 +8,6 @@
 }
 .container {
   width: auto;
-  border-radius: 5px;
   border-right: none;
   display: flex;
   flex-direction: column;

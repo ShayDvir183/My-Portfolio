@@ -8,15 +8,14 @@
 .contactWrap {
   border: 1px solid black;
   border-radius: 30px;
-  width: 30rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 1rem;
-  background-color: #f1f1f1;
+  margin-top: 3rem;
+  background-color: #f8f8ff;
 }
 .leftWrap {
-  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,39 +24,36 @@
   padding-bottom: 1.5rem;
 }
 .rightWrap {
-  width: 50%;
+  line-height: 2rem;
+  padding-bottom: 1.5rem;
 }
 .container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
-  justify-content: space-around;
-  align-items: stretch;
+  height: 100%;
+}
+.header {
+  display: flex;
+  flex-direction: column;
 }
 .textInput {
   height: 3rem;
-  font-size: 1.5rem;
+  font-size: 1.5vw;
   border-radius: 10px;
-  border: none;
+  border: 1px solid black;
 }
 .textAreaInput {
   height: 10rem;
-  font-size: 1rem;
+  font-size: 1vw;
   border-radius: 10px;
-  border: none;
+  border: 1px solid black;
 }
 input,
 textarea:focus {
   outline: none;
 }
-.btn {
-  padding: 10px 20px;
-  background-color: aquamarine;
-  border: none;
-  border-radius: 15px;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
+
 .call {
   width: 100px !important;
   height: 50px;
@@ -109,24 +105,24 @@ a {
   }
 }
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none;
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
   animation: animatetop 0.3s;
 }
 .modalContent {
   background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
+  margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 80%;
 }
 @keyframes animatetop {
   from {
@@ -137,4 +133,34 @@ a {
     top: 0;
     opacity: 1;
   }
+}
+.title {
+  font-size: 4vw !important;
+
+  display: block;
+  font-family: "Anonymous Pro", monospace;
+  text-align: center;
+  position: relative;
+  color: #fff !important;
+  text-shadow: 0 0 25px blue, 0 0 5px #001f3f;
+  box-shadow: 0 8px 6px -6px #a1c4fd;
+  letter-spacing: 7px !important;
+  white-space: nowrap;
+  border-bottom: 5px solid #fff;
+  border-radius: 20px;
+  width: fit-content;
+  margin: auto auto;
+}
+.secondTitle {
+  color: #fff !important;
+  margin-top: 15px;
+  text-shadow: 0 0 25px blue, 0 0 5px #001f3f;
+}
+.label {
+  border-bottom: 5px solid #fff;
+  width: fit-content;
+  margin: auto auto;
+  color: #000000 !important;
+  font-size: x-large;
+  text-shadow: 2px 2px 4px #f8f8ff;
 }

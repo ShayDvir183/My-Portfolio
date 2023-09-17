@@ -1,38 +1,34 @@
 .text {
-  /* max-width: 400px; */
-  width: 50%;
   text-align: left;
   font-family: "Anonymous Pro", monospace;
-  height: max-content;
-  font-size: 1.5em;
-  animation: fadein 2s;
+  font-size: 2vw;
+  animation: fadein 4s;
   white-space: pre-line;
   line-height: 2;
   color: #0072b5;
   text-shadow: 1px 1px 2px #0072b5, 0 0 25px #fff, 0 0 5px #fff;
 }
 .title {
-  font-size: 2em;
-  white-space: pre-line;
+  animation: stroke 5s infinite alternate;
+  stroke-width: 2;
+  stroke: #365fa0;
+  font-size: 4vw !important;
   display: block;
   font-family: "Anonymous Pro", monospace;
   text-align: left;
   position: relative;
-  color: #fff;
+  color: #fff !important;
   letter-spacing: 7px !important;
-  overflow: hidden;
+  width: 0;
   white-space: nowrap;
-  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
-  animation: typewriter 4s steps(44) 1s 1 normal both;
+  text-shadow: 0 0 25px blue, 0 0 5px #001f3f;
+  border-bottom: 5px solid #fff;
+  border-radius: 20px;
+  width: fit-content;
 }
 
-@keyframes typewriter {
-  from {
-    width: 0;
-  }
-  to {
-    width: 710px;
-  }
+.wrapper {
+  background-color: #ffffff;
 }
 
 @keyframes fadein {
@@ -45,24 +41,15 @@
 }
 
 .container {
-  margin-left: 150px;
-  margin-top: 70px;
-  width: 100%;
+  margin: 5rem 8rem;
+  width: 50%;
+  max-width: 50%;
+  height: fit-content;
+  float: left;
 }
-.button {
-  height: 150px;
-  width: 150px;
-  background-color: black;
-  border-radius: 5px;
-  color: #fff;
-  align-self: center;
-  border: none;
-  display: block;
-  top: 100px;
-  margin: 0 auto;
-}
-button:hover {
-  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
-    0 0 200px #03e9f4;
-  background-color: #03e9f4;
+
+@media screen and (max-width: 992px) {
+  .text {
+    font-size: 5vw;
+  }
 }

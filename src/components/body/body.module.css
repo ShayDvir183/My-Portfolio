@@ -1,3 +1,7 @@
 .container {
-  row-gap: 5px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: inherit;
+  width: 100%;
 }

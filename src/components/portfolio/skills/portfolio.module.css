@@ -1,42 +1,70 @@
 .projectWrap {
   border-radius: 30px;
   background-color: #fff;
-  width: 40%;
-  height: 30rem;
+  width: 45%;
+  max-width: 45%;
+  height: 500px;
+  max-height: 500px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
   text-align: left;
+  padding: 10px 20px;
 }
 img {
   width: 70%;
   height: 60%;
   border-radius: 30px;
 }
+.carouselWrap {
+  width: 90%;
+  margin: 20px 20px;
+}
 .container {
   display: flex;
   flex-direction: column;
-  height: fit-content;
-  background: inherit;
+  row-gap: 2rem;
+  height: 100%;
+  width: 100%;
+}
+.title {
+  font-size: 4vw !important;
+  border-bottom: 5px solid #fff;
+  border-radius: 20px;
+  width: fit-content;
+  margin: auto auto;
+  display: block;
+  font-family: "Anonymous Pro", monospace;
+  text-align: center;
+  position: relative;
+  color: #fff !important;
+  text-shadow: 0 0 25px blue, 0 0 5px #001f3f;
+  letter-spacing: 7px !important;
+  white-space: nowrap;
+}
+.secondTitle {
+  color: #fff !important;
+  text-shadow: 0 0 25px blue, 0 0 5px #001f3f;
 }
 .projectsWrapeer {
   display: flex;
   flex-direction: row;
-  column-gap: 20px;
   flex-wrap: wrap;
-  height: 100%;
-  justify-content: center;
-  row-gap: 20px;
+  justify-content: space-around;
+  align-items: center;
+  row-gap: 3rem;
+  height: fit-content;
 }
 img:hover {
-  /* Start the shake animation and make the animation last for 0.5 seconds */
   animation: shake 0.5s;
-
-  /* When the animation is finished, start again */
   animation-iteration-count: infinite;
 }
-
+.textWrap {
+  background-color: #f1f1f1;
+  width: 90%;
+  padding: 10px 10px;
+}
 @keyframes shake {
   0% {
     transform: translate(1px, 1px) rotate(0deg);

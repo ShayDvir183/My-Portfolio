@@ -1,18 +1,15 @@
 import styles from "./contact.module.css";
-import { useRef } from "react";
+import { useRef, Fragment } from "react";
 import emailjs from "@emailjs/browser";
 export default function Contact() {
   const formm = useRef<HTMLFormElement>(null);
-  const whatsappIcon = getWhatsappIcon();
-  const callIcon = getCallIcon();
-  const emailIcon = getEmailICon();
+  const user_name = useRef(null);
   const modalRef = useRef(null);
   const sendEmail = (e: any) => {
+    if (!formm) return;
     e.preventDefault();
     // @ts-ignore
     modalRef.current.style.display = "block";
-    if (!formm) return;
-    console.log(formm.current);
     emailjs
       .sendForm(
         "service_mi89wxd",
@@ -32,68 +29,66 @@ export default function Contact() {
         }
       );
   };
-
   return (
-    <div>
-      <h1>Get in touch</h1>
-      <h2>Contact me</h2>
-      <div className={styles.container}>
-        <div className={styles.leftWrap}>
-          <div className={styles.contactWrap}>
-            <h2>
-              Email<i>{emailIcon}</i>
-            </h2>
-            <h4>shaydvir12312@gmail.com</h4>
-            <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=shaydvir12312@gmail.com"
-              rel="noreferrer"
-              target="_blank"
-            >
-              Email me
-            </a>
-          </div>
-          <div className={styles.contactWrap}>
-            <h2>
-              Whatsapp<i>{whatsappIcon}</i>
-            </h2>
-            <h4>+972-54-883-0701</h4>
-            <a
-              href="https://api.whatsapp.com/send?phone=972548830701&text=Hi,%20Nice%20to%20meet%20you"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Let's Talk
-            </a>
-          </div>
-          <div className={styles.contactWrap}>
-            <h2>
-              Call me<i>{callIcon}</i>
-            </h2>
-            <h4>+972-54-883-0701</h4>
-            <a
-              href="tel:+972548830701"
-              target="_blank"
-              rel="noreferrer"
-              className={styles.shakeWrap}
-            >
-              <span className={styles.call}>{callIcon} Call </span>
-            </a>
-          </div>
+    <div className={`${styles.container} container-fluid`} id="contact">
+      <div className={styles.header}>
+        <h1 className={styles.title}>Get in touch</h1>
+        <h2 className={styles.secondTitle}>
+          Developer at Your Service: Let's Chat!
+        </h2>
+      </div>
+      <div className="row d.flex justify-content-center">
+        <div className={`${styles.leftWrap} col-md-5  `}>
+          {contacts.map((c: IContact, index: number) => {
+            return createContactDiv(c);
+          })}
         </div>
-        <div className={styles.rightWrap}>
-          <h2>Developer at Your Service: Let's Chat!</h2>
-          <form className={styles.formWrap} onSubmit={sendEmail} ref={formm}>
-            <label>Name</label>
-            <input className={styles.textInput} type="text" name="user_name" />
-            <label>Email</label>
+        <div className={`${styles.rightWrap} col-md-5  `}>
+          <form
+            className={`${styles.formWrap} mt-5`}
+            onSubmit={sendEmail}
+            ref={formm}
+          >
+            <label className={styles.label}>Name</label>
             <input
+              className={styles.textInput}
+              required
+              onInvalid={(e) => {
+                // @ts-ignore
+                user_name.current.style.border = "3px solid red";
+                e.preventDefault();
+                setTimeout(() => {
+                  // @ts-ignore
+                  user_name.current.style.border = "1px solid black";
+                }, 3000);
+              }}
+              type="text"
+              name="user_name"
+              ref={user_name}
+              data-toggle="popover"
+              title="Popover title"
+              data-content="And here's some amazing content. It's very engaging. Right?"
+            />
+            <label className={styles.label}>Email</label>
+            <input
+              required
               className={styles.textInput}
               type="email"
               name="user_email"
+              onInvalid={(e) => {
+                e.preventDefault();
+              }}
             />
-            <label>Message</label>
-            <textarea className={styles.textAreaInput} name="message" />
-            <input className={styles.btn} type="submit" value="Send" />
+            <label className={styles.label}>Message</label>
+            <textarea
+              required
+              className={styles.textAreaInput}
+              name="message"
+              onInvalid={(e) => {
+                e.preventDefault();
+              }}
+            />
+            <input className="btn btn-primary" type="submit" value="Send" />
           </form>
         </div>
       </div>
@@ -133,8 +128,8 @@ const getWhatsappIcon = () => (
     preserveAspectRatio="xMidYMid"
   >
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M16 31C23.732 31 30 24.732 30 17C30 9.26801 23.732 3 16 3C8.26801 3 2 9.26801 2 17C2 19.5109 2.661 21.8674 3.81847 23.905L2 31L9.31486 29.3038C11.3014 30.3854 13.5789 31 16 31ZM16 28.8462C22.5425 28.8462 27.8462 23.5425 27.8462 17C27.8462 10.4576 22.5425 5.15385 16 5.15385C9.45755 5.15385 4.15385 10.4576 4.15385 17C4.15385 19.5261 4.9445 21.8675 6.29184 23.7902L5.23077 27.7692L9.27993 26.7569C11.1894 28.0746 13.5046 28.8462 16 28.8462Z"
       fill="#BFC8D0"
     />
@@ -143,8 +138,8 @@ const getWhatsappIcon = () => (
       fill="url(#paint0_linear_87_7264)"
     />
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M16 30C23.732 30 30 23.732 30 16C30 8.26801 23.732 2 16 2C8.26801 2 2 8.26801 2 16C2 18.5109 2.661 20.8674 3.81847 22.905L2 30L9.31486 28.3038C11.3014 29.3854 13.5789 30 16 30ZM16 27.8462C22.5425 27.8462 27.8462 22.5425 27.8462 16C27.8462 9.45755 22.5425 4.15385 16 4.15385C9.45755 4.15385 4.15385 9.45755 4.15385 16C4.15385 18.5261 4.9445 20.8675 6.29184 22.7902L5.23077 26.7692L9.27993 25.7569C11.1894 27.0746 13.5046 27.8462 16 27.8462Z"
       fill="white"
     />
@@ -161,17 +156,17 @@ const getWhatsappIcon = () => (
         y2="28"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#5BD066" />
-        <stop offset="1" stop-color="#27B43E" />
+        <stop stopColor="#5BD066" />
+        <stop offset="1" stopColor="#27B43E" />
       </linearGradient>
     </defs>
   </svg>
 );
 const getCallIcon = () => (
   <svg
-    width="20px"
-    height="20px"
-    viewBox="0 0 24 24"
+    width="10px"
+    height="10px"
+    viewBox="0 0 28 28"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     preserveAspectRatio="xMidYMid"
@@ -179,7 +174,7 @@ const getCallIcon = () => (
     <path
       d="M17 12C19.7614 12 22 9.76142 22 7C22 4.23858 19.7614 2 17 2C14.2386 2 12 4.23858 12 7C12 7.79984 12.1878 8.55582 12.5217 9.22624C12.6105 9.4044 12.64 9.60803 12.5886 9.80031L12.2908 10.9133C12.1615 11.3965 12.6035 11.8385 13.0867 11.7092L14.1997 11.4114C14.392 11.36 14.5956 11.3895 14.7738 11.4783C15.4442 11.8122 16.2002 12 17 12Z"
       stroke="#1C274C"
-      stroke-width="1.5"
+      strokeWidth="1.5"
     />
     <path
       opacity="0.5"
@@ -198,10 +193,70 @@ const getEmailICon = () => (
     preserveAspectRatio="xMidYMid"
   >
     <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
+      fillRule="evenodd"
+      clipRule="evenodd"
       d="M3.75 5.25L3 6V18L3.75 18.75H20.25L21 18V6L20.25 5.25h2.75ZM4.5 7.6955V17.25H19.5V7.69525L11.9999 14.5136L4.5 7.6955ZM18.3099 6.75H5.68986L11.9999 12.4864L18.3099 6.75Z"
       fill="#080341"
     />
   </svg>
 );
+const contacts: Array<IContact> = [
+  {
+    icon: getEmailICon(),
+    data: "shaydvir12312@gmail.com",
+    href: "https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=shaydvir12312@gmail.com",
+    iconText: "Email",
+    text: "Email me",
+  },
+  {
+    icon: getWhatsappIcon(),
+    data: "+972-54-883-0701",
+    href: "https://api.whatsapp.com/send?phone=972548830701&text=Hi,%20Nice%20to%20meet%20you",
+    iconText: "Whatsapp",
+    text: "Let's Talk",
+  },
+  {
+    icon: getCallIcon(),
+    data: "+972-54-883-0701",
+    href: "tel:+972548830701",
+    iconText: "Call me",
+    text: "Call",
+  },
+];
+const createContactDiv = (contact: IContact) => {
+  return (
+    <div className={`${styles.contactWrap} col-md-6`} key={contact.href}>
+      <h2>
+        {contact.iconText}
+        <i>{contact.icon}</i>
+      </h2>
+      <h4>{contact.data}</h4>
+      <a
+        href={contact.href}
+        target="_blank"
+        rel="noreferrer"
+        className={
+          contact.text === "Call"
+            ? `${styles.call} btn btn-primary`
+            : "btn btn-primary"
+        }
+      >
+        {contact.text === "Call" ? (
+          <Fragment>
+            <i>{contact.icon}</i>
+            {contact.text}
+          </Fragment>
+        ) : (
+          contact.text
+        )}
+      </a>
+    </div>
+  );
+};
+interface IContact {
+  icon: JSX.Element;
+  iconText: string;
+  href: string;
+  text: string;
+  data: string;
+}
