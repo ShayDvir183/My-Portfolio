@@ -77,7 +77,6 @@ svg {
   text-align: center;
   align-items: center;
   text-decoration: none;
-  color: #fff;
   border-radius: 5px;
   font-family: "Anonymous Pro", monospace;
   font-weight: 500;
@@ -88,18 +87,12 @@ svg {
   position: relative;
   display: inline-block;
   box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
-    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+    7px 7px 20px 0px #0000001a, 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
   outline: none;
-}
-.btn_style {
   border: none;
-  background: rgb(251, 33, 117);
-  background: linear-gradient(
-    0deg,
-    rgba(251, 33, 117, 1) 0%,
-    rgba(234, 76, 137, 1) 100%
-  );
-  color: #fff;
+  background-color: inherit;
+  color: #0072b5;
+  text-shadow: 1px 1px 2px #a1c4fd, 0 0 25px #c2e9fb, 0 0 5px #fff;
 }
 
 @media screen and (max-width: 992px) {
@@ -113,5 +106,8 @@ svg {
   }
   .wrap {
     flex-direction: column;
+  }
+  .title {
+    font-size: 6vw !important;
   }
 }

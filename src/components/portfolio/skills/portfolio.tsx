@@ -8,7 +8,7 @@ export default function Portfolio() {
   return (
     <div className={styles.container} id="portfolio">
       <h1 className={styles.title}>Portfolio</h1>
-      <h3 className={styles.secondTitle}>Most recent works</h3>
+      <h3 className={styles.secondTitle}>My most recent works</h3>
       <div className={`${styles.projectsWrapeer}`}>
         <CarouselComponent />
       </div>
@@ -21,7 +21,7 @@ function CarouselComponent() {
     <div className={styles.carouselWrap}>
       <Carousel
         emulateTouch={true}
-        width={"100%"}
+        width="100%"
         infiniteLoop
         labels={{
           item: "project item",
@@ -50,7 +50,7 @@ function createProjectContainer(project: IProject) {
   return (
     <div
       className={`card text-center mb-5 mt-3 `}
-      style={{ width: "30rem", margin: "auto auto" }}
+      style={{ width: "90%", margin: "auto auto" }}
     >
       <h3 className="card-header">{project.project_name}</h3>
       <p className="card-title mb-2 p-2 ">{project.description}</p>

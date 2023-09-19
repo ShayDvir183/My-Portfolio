@@ -136,7 +136,6 @@ a {
 }
 .title {
   font-size: 4vw !important;
-
   display: block;
   font-family: "Anonymous Pro", monospace;
   text-align: center;
@@ -163,4 +162,9 @@ a {
   color: #000000 !important;
   font-size: x-large;
   text-shadow: 2px 2px 4px #f8f8ff;
+}
+@media screen and (max-width: 992px) {
+  .title {
+    font-size: 6vw !important;
+  }
 }

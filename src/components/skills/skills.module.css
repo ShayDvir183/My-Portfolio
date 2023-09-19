@@ -84,9 +84,6 @@ h5 {
   font-size: 1vw !important;
 }
 
-* {
-  box-sizing: border-box;
-}
 @media screen and (max-width: 992px) {
   span {
     font-size: 5vw !important;
@@ -103,5 +100,11 @@ h5 {
   .skillData {
     width: 50%;
     height: fit-content;
+  }
+  .title {
+    font-size: 6vw !important;
+  }
+  .wrapper {
+    margin-top: 50px;
   }
 }

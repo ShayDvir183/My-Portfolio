@@ -47,7 +47,7 @@ export default function About() {
         <div className={`${styles.btnWrap} col-2 position-relative`}>
           <a
             href={Cv}
-            className={`${styles.btn} ${styles.btn_style} position-absolute  top-0 start-50 translate-middle-x`}
+            className={`${styles.btn} position-absolute  top-0 start-50 translate-middle-x`}
             download={"Shay_Dvir_Cv"}
             onClick={cvClickHandler}
           >
